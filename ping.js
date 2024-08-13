@@ -4,7 +4,7 @@ const cron = require('node-cron');
 const app = express();
  
 // Schedule a cron job to run every 5 minutes
-cron.schedule('*/5 * * * *', () => {
+cron.schedule('*/5 * * * *', async () => {
     console.log('Running a task every 5 minutes');
     try {
         await axios.get('https://stock-server-qag4.onrender.com/ping');
